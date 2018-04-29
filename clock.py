@@ -30,10 +30,6 @@ class Clock(tkinter.Label):
                         self.time     = time.strftime('%I:%M %p').lstrip('0')
                 self.display_time = self.time
                 self.configure(text=self.display_time)
-
-##                if colon:
-##                        self.blink_colon()
-
                 self.after(200, self.tick)
 
 
