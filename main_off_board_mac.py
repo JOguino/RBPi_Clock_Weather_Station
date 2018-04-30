@@ -70,6 +70,29 @@ if __name__ == "__main__":
 ##        room humidity
         room_humidity = frames.Room_Humidity(window)
         room_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.8)
+        
+##   percent chance of rain  
+        chance_rain = tkinter.Frame(width=200, height=50)
+        chance_rain.place(in_=mainframe, anchor="e", relx=5.5/6.0, rely=.1)
+        chance_rain_label = tkinter.Label(chance_rain , text="30%", fg='white',bg='#292b5d',font=("alfie",60)).pack()
+        
+##        weather condition
+        weather_string = ["clear sky",
+                          "few clouds",
+                          "scattered clouds" ,
+                          "broken clouds",
+                          "shower rain",
+                          "rain",
+                          "thunderstorm",
+                          "snow",
+                          "mist"]
+##        weather_string = "scattered clouds"
+        weather = tkinter.Frame(width=200, height=50)
+        weather.place(in_=mainframe, anchor="w", relx=.45/6.0, rely=.1)
+        weather_label = tkinter.Label(weather , text= weather_string[2], fg='white',bg='#292b5d',font=("alfie",60)).pack()
+        
+
+
 
 
         window.mainloop()
