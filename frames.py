@@ -32,7 +32,7 @@ class Room_Pressure(tk.Frame):
     x = str('%0.d' %sense.get_pressure())
     def __init__(self, parent):
         tk.Frame.__init__(self, parent, width = 333, height = 50)
-        self.label = tk.Label(self, text=" hPA", 
+        self.label = tk.Label(self, text="hPA", 
                               background='#292b5d',
                               foreground="white")
         self.label.pack(side="top", fill="both", expand=True)
@@ -42,7 +42,7 @@ class Room_Pressure(tk.Frame):
         Room_Pressure.x = str('%0.d' %sense.get_pressure())
         bg = self.label.cget("background")
         fg = self.label.cget("foreground")
-        self.label.configure(text = str(Room_Pressure.x) + " hPa",
+        self.label.configure(text = str(Room_Pressure.x) + "hPa",
                                                background=bg,
                                                foreground=fg,
                                                font=("alfie",72))
@@ -69,16 +69,19 @@ class Room_Humidity(tk.Frame):
         self.after(1000, self.update)
         
 class Outside_Temperature(tk.Frame):
-    x = str('%0.d' %sense.get_temperature())
+    weather = OWM.getWeatherData()
+    x = str('%0.d' %weather['Temperature'])
     def __init__(self, parent):
         tk.Frame.__init__(self, parent, width = 333, height = 50)
-        self.label = tk.Label(self, text="Hello, world", 
-                              background='#292b5d', foreground="white")
+        self.label = tk.Label(self, text=Outside_Temperature.x + "°C", 
+                              background='#292b5d',
+                              foreground="white")
         self.label.pack(side="top", fill="both", expand=True)
         self.update()
 
     def update(self):
-        Outside_Temperature.x = str('%0.d' %sense.get_temperature())
+        Outside_Temperature.x = str('%0.d' %weather['Temperature'])
+        
         bg = self.label.cget("background")
         fg = self.label.cget("foreground")
         self.label.configure(text = str(Outside_Temperature.x) + "°C",
@@ -94,7 +97,7 @@ class Outside_Pressure(tk.Frame):
     def __init__(self, parent):
         print(Outside_Pressure.x)
         tk.Frame.__init__(self, parent, width = 333, height = 50)
-        self.label = tk.Label(self, text=Outside_Pressure.x + " hPa", 
+        self.label = tk.Label(self, text=Outside_Pressure.x + "hPa", 
                               background='#292b5d',
                               foreground="white")
         self.label.pack(side="top", fill="both", expand=True)
@@ -114,21 +117,27 @@ class Outside_Pressure(tk.Frame):
         self.after(3600000, self.update)
         
 class Outside_Humidity(tk.Frame):
-    x = str('%0.d' %sense.get_humidity())
+    weather = OWM.getWeatherData()
+    x = str('%0.d' %weather['Humidity'])
     def __init__(self, parent):
+        print(Outside_Humidity.x)
         tk.Frame.__init__(self, parent, width = 333, height = 50)
-        self.label = tk.Label(self, text="%", 
-                              background='#292b5d', foreground="white")
+        self.label = tk.Label(self, text=Outside_Humidity.x + "%", 
+                              background='#292b5d',
+                              foreground="white")
         self.label.pack(side="top", fill="both", expand=True)
         self.update()
 
     def update(self):
-        Outside_Humidity.x = str('%0.d' %sense.get_humidity())
+        weather = OWM.getWeatherData()
+        Outside_Humidity.x = str('%0.d' %weather['Humidity'])
+        print(Outside_Humidity.x)
         bg = self.label.cget("background")
         fg = self.label.cget("foreground")
         self.label.configure(text = str(Outside_Humidity.x) + "%",
                                                background=bg,
                                                foreground=fg,
                                                font=("alfie",72))
-        self.after(1000, self.update)
+##        after 1 hour, refresh
+        self.after(3600000, self.update)
         
