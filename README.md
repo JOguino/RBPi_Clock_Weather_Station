@@ -92,3 +92,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ![alt text](https://raw.githubusercontent.com/Oguino/RBPi_Clock_Weather_Station/tree/master/icons/icons/01d.png)
 ![Screenshot](01d.png)
 
+<p align="center">
+  <img src="https://github.com/JOguino/RBPi_Clock_Weather_Station/blob/master/icons/icons/01d.png?raw=true" width="350"/>
+  <img src="https://github.com/JOguino/RBPi_Clock_Weather_Station/blob/master/icons/icons/01d.png?raw=true" width="350"/>
+</p>
