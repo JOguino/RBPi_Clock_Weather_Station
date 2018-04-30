@@ -45,37 +45,40 @@ if __name__ == "__main__":
         
 
  #       tkinter.Label(clock_frame, text="Have a nice day.",fg='white',bg='#292b5d').pack()
+        leftcol = 1/12.0
+        midcol = 0.5
+        rightcol = 11/12.0
         
        
 ##       outside temperature 
         outside_temperature = frames.Outside_Temperature(window)
-        outside_temperature.place(in_=mainframe, anchor="w", relx=.45/6.0, rely=.2)
+        outside_temperature.place(in_=mainframe, anchor="w", relx=leftcol, rely=.2)
         
         
 ##        outside_pressure
         outside_pressure = frames.Outside_Pressure(window)
-        outside_pressure.place(in_=mainframe, anchor="c", relx=3/6.0, rely=.2)
+        outside_pressure.place(in_=mainframe, anchor="c", relx=midcol, rely=.2)
         
 ##        outside humidity
         outside_humidity = frames.Outside_Humidity(window)
-        outside_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.2)
+        outside_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.2)
 
 ##        Create Room Values
 ##        room temperature
         room_temperature = frames.Room_Temperature(window)
-        room_temperature.place(in_=mainframe, anchor="c", relx=1/6.0, rely=.8)
+        room_temperature.place(in_=mainframe, anchor="w", relx=leftcol, rely=.8)
 
 ##        room pressure
         room_pressure = frames.Room_Pressure(window)
-        room_pressure.place(in_=mainframe, anchor="c", relx=3/6.0, rely=.8)
+        room_pressure.place(in_=mainframe, anchor="c", relx=midcol, rely=.8)
 
 ##        room humidity
         room_humidity = frames.Room_Humidity(window)
-        room_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.8)
+        room_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.8)
         
 ##   percent chance of rain  
         chance_rain = tkinter.Frame(width=200, height=50)
-        chance_rain.place(in_=mainframe, anchor="e", relx=5.5/6.0, rely=.1)
+        chance_rain.place(in_=mainframe, anchor="e", relx=rightcol, rely=.1)
         chance_rain_label = tkinter.Label(chance_rain , text="30%", fg='white',bg='#292b5d',font=("alfie",60)).pack()
         
 ##        weather condition
@@ -89,17 +92,18 @@ if __name__ == "__main__":
                           ("snow", "13d.png"),
                           ("mist", "50d.png")]
         
-        current_weather = 5
+        current_weather = 0 # TODO: This is where we choose the correct weather index from above ^
+        iconset = "icons"  # can do alternative_icons too
         
         weather = tkinter.Frame(width=200, height=50)
-        weather.place(in_=mainframe, anchor="w", relx=.45/6.0, rely=.1)
-        weather_label = tkinter.Label(weather , text= weather_stuff[current_weather][0], fg='white',bg='#292b5d',font=("alfie",60)).pack()
+        weather.place(in_=mainframe, anchor="w", relx=leftcol, rely=.1)
+        weather_label = tkinter.Label(weather , text= weather_stuff[current_weather][0].capitalize(), fg='white',bg='#292b5d',font=("alfie",60)).pack()
         
-        load = Image.open(os.path.join("icons/", weather_stuff[current_weather][1]))
+        load = Image.open(os.path.join(iconset, weather_stuff[current_weather][1]))
         render = ImageTk.PhotoImage(load)
         
         weather_logo = tkinter.Frame(width=200, height=50, background="#292b5d")
-        weather_logo.place(in_=mainframe, anchor="c", relx=3/6.0, rely=.1)
+        weather_logo.place(in_=mainframe, anchor="c", relx=midcol, rely=.1)
         weather_logo_label = tkinter.Label(weather_logo, background="#292b5d", image=render,font=("alfie",60)).pack()
 
 
