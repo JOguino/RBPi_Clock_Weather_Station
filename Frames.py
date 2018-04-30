@@ -2,6 +2,7 @@
 import tkinter as tk
 from sense_hat import SenseHat
 import OWMInterface as OWM
+import PixelArray as PA
 
 sense = SenseHat()
 sense.clear()
@@ -143,11 +144,11 @@ class Outside_Humidity(tk.Frame):
         
 class Outside_Weather(tk.Frame):
     weather = OWM.getWeatherData()
-    x = str('%0.d' %weather['Humidity'])
+    x = weather['Weather Description']
     def __init__(self, parent):
 ##        print(Outside_Humidity.x)
         tk.Frame.__init__(self, parent, width = 333, height = 50)
-        self.label = tk.Label(self, text=Outside_Humidity.x + "%", 
+        self.label = tk.Label(self, text=str(Outside_Weather.x), 
                               background='#292b5d',
                               foreground="white")
         self.label.pack(side="top", fill="both", expand=True)
@@ -155,15 +156,17 @@ class Outside_Weather(tk.Frame):
 
     def update(self):
         weather = OWM.getWeatherData()
-        Outside_Humidity.x = str('%0.d' %weather['Humidity'])
+        Outside_Weather.x = weather['Weather Description']
 ##        print(Outside_Humidity.x)
         bg = self.label.cget("background")
         fg = self.label.cget("foreground")
-        self.label.configure(text = str(Outside_Humidity.x) + "%",
+        self.label.configure(text = str(Outside_Weather.x),
                                                background=bg,
                                                foreground=fg,
                                                font=("alfie",72))
 ##        after 1 hour, refresh
+        
+        sense.set_pixels(PA.setPixelArray(weather['Weather Icon']))
         self.after(3600000, self.update)
 
 class Outside_Chance_of_Rain(tk.Frame):
