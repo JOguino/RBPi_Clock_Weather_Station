@@ -30,6 +30,7 @@ class Clock(tkinter.Label):
                         self.time     = time.strftime('%I:%M %p').lstrip('0')
                 self.display_time = self.time
                 self.configure(text=self.display_time)
+
                 self.after(200, self.tick)
 
 
@@ -45,25 +46,6 @@ class Clock(tkinter.Label):
                         self.config(text=self.display_time)
                 self.after(200, self.tick)
                 
-
-class Room_Temperature_Frame(tkinter.Label):
-    sensorData['temperature'] = sense.get_temperature()
-    def __init__(self,parent):
-        tkinter.Frame.__init__(self, parent, width=333, height =50)
-        self.Label = tkinter.Label(self, text= str('%0.d' %(sensorData['temperature'])) + " °C",
-                                               fg='white',
-                                               bg='#292b5d',
-                                               font=("alfie",72)).pack()
-        self.update()
-        
-    def update(self):
-        sensorData['temperature'] = sense.get_temperature()
-        self.Label.configure(text= str('%0.d' %(sensorData['temperature'])) + " °C",
-                                               fg='white',
-                                               bg='#292b5d',
-                                               font=("alfie",72))
-        self.after(1000, self.update)
-
 
 if __name__ == "__main__":
         """
@@ -102,8 +84,7 @@ if __name__ == "__main__":
         
        
 ##       outside temperature 
-        outside_temperature = tkinter.Frame(width=333, height=50)
-        outside_temperature_label = tkinter.Label(outside_temperature, text="19 °C", fg='white',bg='#292b5d',font=("alfie",72)).pack()
+        outside_temperature = frames.Outside_Temperature(window)
         outside_temperature.place(in_=mainframe, anchor="c", relx=1/6.0, rely=.2)
         
         
@@ -112,9 +93,8 @@ if __name__ == "__main__":
         outside_pressure.place(in_=mainframe, anchor="c", relx=3/6.0, rely=.2)
         
 ##        outside humidity
-        outside_humidity = tkinter.Frame(width=333, height=50)
+        outside_humidity = frames.Outside_Humidity(window)
         outside_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.2)
-        outside_humidity_label = tkinter.Label(outside_humidity, text="100%", fg='white',bg='#292b5d',font=("alfie",72)).pack()
 
 ##        Create Room Values
 ##        room temperature
@@ -132,4 +112,5 @@ if __name__ == "__main__":
 
         window.mainloop()
         
+
 
