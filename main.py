@@ -12,7 +12,7 @@ import Clock as clock
 sense = SenseHat()
 sense.clear()
 sensorData = {'humidity': sense.get_humidity(), 'temperature': sense.get_temperature(),'pressure': sense.get_pressure()}
-
+weather = OWM.getWeatherData()
 
 if __name__ == "__main__":
         """
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         # Create window and frame
         window = tkinter.Tk()
         window.configure(background = 'white')
-##        window.attributes('-fullscreen', True)
+        window.attributes('-fullscreen', True)
         mainframe = tkinter.Frame(width=800, height=600, background="#292b5d")
         mainframe.pack(fill="both", expand=True, padx=20, pady=20)
 
@@ -52,16 +52,37 @@ if __name__ == "__main__":
        
 ##       outside temperature 
         outside_temperature = frames.Outside_Temperature(window)
-        outside_temperature.place(in_=mainframe, anchor="c", relx=1/6.0, rely=.2)
+        outside_temperature.place(in_=mainframe, anchor="c", relx=1/6.0, rely=.25)
         
         
 ##        outside_pressure
         outside_pressure = frames.Outside_Pressure(window)
-        outside_pressure.place(in_=mainframe, anchor="c", relx=3/6.0, rely=.2)
+        outside_pressure.place(in_=mainframe, anchor="c", relx=3/6.0, rely=.25)
         
 ##        outside humidity
         outside_humidity = frames.Outside_Humidity(window)
-        outside_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.2)
+        outside_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.25)
+ 
+##        percent chance of rain  
+        chance_rain = tkinter.Frame(width=200, height=50)
+        chance_rain.place(in_=mainframe, anchor="e", relx=5.5/6.0, rely=.1)
+        chance_rain_label = tkinter.Label(chance_rain , text="30%", fg='white',bg='#292b5d',font=("alfie",60)).pack()
+        
+##        weather condition
+        weather_string = ["clear sky",
+                          "few clouds",
+                          "scattered clouds" ,
+                          "broken clouds",
+                          "shower rain",
+                          "rain",
+                          "thunderstorm",
+                          "snow",
+                          "mist"]
+##        weather_string = "scattered clouds"
+        weather = frames.Outside_Weather(window)
+        weather.place(in_=mainframe, anchor="w", relx=.45/6.0, rely=.1)
+        
+
 
 ##        Create Room Values
 ##        room temperature
@@ -75,8 +96,12 @@ if __name__ == "__main__":
 ##        room humidity
         room_humidity = frames.Room_Humidity(window)
         room_humidity.place(in_=mainframe, anchor="c", relx=5/6.0, rely=.8)
+        
+##        set Pixels
+        weather = OWM.getWeatherData()
 
 
         window.mainloop()
         
+
 
