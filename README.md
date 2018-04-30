@@ -88,3 +88,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Inspiration
 * etc
 
+## Images
+![alt text](https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/icon/01d.png)
+
