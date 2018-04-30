@@ -25,6 +25,9 @@ class OWMInterface:
 
     def weatherDesc(self):
         return str(self.data['weather'][0]['description'])
+    
+    def weatherIcon(self):
+        return str(self.data['weather'][0]['icon'])
 
     def temperature(self):
         return float(self.data['main']['temp'])
@@ -76,19 +79,22 @@ class OWMInterface:
 def getWeatherData():
     loc = IPLoc()
     coords = loc.getLoc()
-    OWM = OWMInterface(lat=coords[0], lon=coords[1])
+    OWM = OWMInterface(lat=coords[0], lon=coords[1], unit='metric')
     OWM.call()
-    print('Weather: %s (%s)' %(OWM.weatherMain(), OWM.weatherDesc()))
-    print('Temperature: %d F' %(OWM.temperature()))
-    print('Pressure: %d hPa' %(OWM.pressure()))
-    print('Humidity: %d %%' %(OWM.humidity()))
-    print('Rain chance: %d %%' %(OWM.chanceOfRain()))
+##    print('Weather: %s (%s)' %(OWM.weatherMain(), OWM.weatherDesc()))
+##    print('Temperature: %d F' %(OWM.temperature()))
+##    print('Pressure: %d hPa' %(OWM.pressure()))
+##    print('Humidity: %d %%' %(OWM.humidity()))
+##    print('Rain chance: %d %%' %(OWM.chanceOfRain()))
     weatherdata = {'Weather Main': OWM.weatherMain(),
                    'Weather Description': OWM.weatherDesc(),
+                   'Weather Icon' : OWM.weatherIcon(),
                    'Temperature': OWM.temperature(),
                    'Pressure': OWM.pressure(),
                    'Humidity': OWM.humidity(),
                    'Rain chance': OWM.chanceOfRain()
                    }
+##    print(weatherdata)
     return weatherdata
     
+
