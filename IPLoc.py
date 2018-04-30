@@ -1,6 +1,6 @@
 import json
 import urllib.request
-
+import time
 # 'Gracefully' coded by Eren Yildirir.
 
 class IPLoc:
@@ -10,9 +10,17 @@ class IPLoc:
         self.call()
 
     def call(self):
-        with urllib.request.urlopen(self.url) as response:
-            jsonBatch = response.read()
-        self.data = json.loads(jsonBatch.decode('utf-8'))
+        called = False
+        while not called:
+            try:
+                with urllib.request.urlopen(self.url) as response:
+                    jsonBatch = response.read()
+                self.data = json.loads(jsonBatch.decode('utf-8'))
+                called =True
+            except:
+                print('Retry Network')
+                time.sleep(1)
+        
 
     def getLoc(self):
         strLoc = self.data['loc']
@@ -31,8 +39,9 @@ class IPLoc:
 
 if __name__ == '__main__':
     loc = IPLoc()
-    print(loc.getLoc())
-    print(loc.getCity())
-    print(loc.getRegion())
-    print(loc.getZipcode())
+##    print(loc.getLoc())
+##    print(loc.getCity())
+##    print(loc.getRegion())
+##    print(loc.getZipcode())
+
 
