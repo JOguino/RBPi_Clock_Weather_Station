@@ -8,7 +8,7 @@ The Bedside Weather Station project displays the weather information such as tem
 
 This is a complete Raspberry Pi weather system with just the base Raspberry Pi hardware, and some assorted analog and digital sensors to make our measurements. No buying pre-made anemometers or rain gauges — we are making our own!
 
-Each of those sensors uses different type of python or even C code to get the readings. Both of them store the results in the database in pretty much the same way. Generally speaking, the code works as follows. In the first run, it creates a new table and with setting up a ?, this process is repeated every ? minutes. This way you get a nice overview of the temperatures during the day.
+Each of those sensors uses different type of python or even C code to get the readings. Both of them store the results in the database in pretty much the same way. Generally speaking, the code works as follows. In the first run, it creates a new table and with setting up a ?, this process is repeated every ? minutes. This way we get a nice overview of the temperatures during the day.
 
 
 ## Getting Started
