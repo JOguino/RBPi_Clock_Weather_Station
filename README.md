@@ -2,7 +2,7 @@
 
 # Bedside Weather Station
 
-Internal (Sensor)/External (API) temperature, pressure, humidity, real clock time.
+Internal (Sensor)/ External (API) temperature, pressure, humidity, real clock time.
 
 The Bedside Weather Station project displays the weather information such as temperature, humidity, pressure and successive weather display of the day.
 
