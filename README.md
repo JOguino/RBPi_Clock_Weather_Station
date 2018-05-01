@@ -19,8 +19,9 @@ These instructions will get you a copy of the project up and running on your loc
 * Raspberry Pi 3 
 * Breadboard wire bundle
 * Breadboard
-* BMP085
-* HTU21DF
+* Pressure Sensor
+* Humidity Sensor
+* Temperature Sensor
 * Wifi module
 * Real time clock module
 * RGB LEDs
@@ -31,11 +32,11 @@ What things you need to install the software and how to install them
 ```
 Give examples
 
+Install latest version of Raspberry Pi OS.
+
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+sudo apt-get install python3
 
 ```
 Give the example
