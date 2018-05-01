@@ -10,7 +10,6 @@ This is a complete Raspberry Pi weather system with just the base Raspberry Pi h
 
 Each of those sensors uses different type of python or even C code to get the readings. Both of them store the results in the database in pretty much the same way. Generally speaking, the code works as follows. In the first run, it creates a new table and with setting up a ?, this process is repeated every ? minutes. This way we get a nice overview of the temperatures during the day.
 
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -31,7 +30,6 @@ What things you need to install the software and how to install them
 
 ```
 Give examples
-```
 
 ### Installing
 
