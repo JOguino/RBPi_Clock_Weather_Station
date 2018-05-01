@@ -1,6 +1,6 @@
 # RBPi_Clock_Weather_Station
 
-# BEDSIDE WEATHER STATION
+# Bedside Weather Station
 
 Internal (Sensor)/External (API) temperature, pressure, humidity, real clock time.
 
