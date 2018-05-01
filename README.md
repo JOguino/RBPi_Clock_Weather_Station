@@ -23,7 +23,7 @@ Breadboard
 BMP085
 HTU21DF
 Wifi module
-Real time clock mocule
+Real time clock module
 RGB LEDs
 Display
 
