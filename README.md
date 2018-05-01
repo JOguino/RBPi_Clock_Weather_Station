@@ -19,8 +19,8 @@ These instructions will get you a copy of the project up and running on your loc
 
 * Raspberry Pi 3 
 * Breadboard wire bundle
-Breadboard
-BMP085
+* Breadboard
+* BMP085
 HTU21DF
 Wifi module
 Real time clock module
