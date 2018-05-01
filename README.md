@@ -40,125 +40,189 @@ Serial communication will be used to transmit the data.
 OWMInterface is a class built to query the web API (OpenWeatherMap in this case) for the outside weather, and decode the response into information accessible by method calls. It requires some modification to run it on a presonalised system, since OpenWeatherMap requires users to get an APPID (available for free) to access their services. This personal APPID must be set inside the class "init" to be able to get correct responses to the web queries.
 
 ### "init"
-Runs at the initialisation of the class object. This is where the APPID needs to be set, and where the class parameters such as service address, location and unit variables are created. This class also automatically calls the "call()" to query the web API to get initial response.  
-#### Input
-__lat:__ The Lattidute from IPLoc or other positioning system.
-__lon:__ The Longitude from IPLoc or other positioning system.
-__unit:__ The desired unit system the response should be in. "metric", "imperial"(default) or "default"(as in Web API default returns in Kelvins)
-#### Output
-Used to create the class object.
+Runs at the initialisation of the class object. This is where the APPID needs to be set, and where the class parameters such as service address, location and unit variables are created. This class also automatically calls the "call()" to query the web API to get initial response.
+
+| Input | Description |
+| ----------  | :----- |
+| `lat`  | The Lattidute from IPLoc or other positioning system. |
+| `lon`  | The Longitude from IPLoc or other positioning system. |
+| `unit` | The desired unit system the response should be in. "metric", "imperial"(default) or "default"(as in Web API default returns in Kelvins) |
+
+| Output | Description |
+| ----- | ---- |
+| _None_ | (Used to create the class object.) |
 
 ### "call()"
 Queries the web API for weather data, and decodes the received JSON into the list "data".
-#### Input
-_NONE_
-#### Output
-_NONE_
-Used to update in-object parameters.
+
+| Input | Description |
+| ----------  | :----- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ----- | :---- |
+| _None_ | (Used to update in-object parameters.) |
 
 ### "weatherMain()"
 Returns the general weather classification ("Clear", "Cloudy", "Rain" etc.)
-#### Input
-_NONE_
-#### Output
-A string with the general weather classification.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _string_ | The general weather classification. |
+
 ### "weatherDesc()"
 Returns the specific weather description (such as "Scattered Clouds")
-#### Input
-_NONE_
-#### Output
-A string with the specific weather description.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _string_ | The specific weather description. |
 
 ### "weatherIcon()"
 Returns the weather icon code to load the specific icon for the weather condition (such as "01d")
-#### Input
-_NONE_
-#### Output
-A string with the specific weather icon code.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _string_ | The specific weather icon code. |
 
 ### "temperature()"
 Returns the temperature at the time of the query, in the units set in the object initialisaion.
-#### Input
-_NONE_
-#### Output
-A float with the temperature value.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _float_ | The temperature value. |
 
 ### "pressure()"
 Returns the atmospheric pressure at the time of the query, in _hPa_.
-#### Input
-_NONE_
-#### Output
-A float with the atmospheric pressure value.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _float_ | The atmospheric pressure value. |
 
 ### "Humidity()"
 Returns the relative humidity percentage at the time of the query.
-#### Input
-_NONE_
-#### Output
-A float with the temperature value.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _float_ | The temperature value. |
 
 ### "chanceOfRain()"
 Uses the "cloudiness", relative humidity, and the difference between the outside temperature and the dew point to give a crude prediction on the chance of rain.
 To calculate the dew point, it uses Magnus' equation with relative humidity and the temperature.
 
 _The averaging parameters and the cutoffs for these factors are tuned by trial and error, and are open to change for improvement._
-#### Input
-_NONE_
-#### Output
-A float with percent chance of rain.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _float_ | The percent chance of rain. |
 
 ### "gerWeatherData()"
 Returns a list of weather parameters (weatherMain, weatherDesc weatherIcon, temperature, pressure, humidiry, chanceOfRain at the time of the query.
 #### Input
-_NONE_
-#### Output
-A list with all the weather condition parameters.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _List_ | All weather condition parameters compiled together in a list.
 
 ## IPLoc Class
 IPLoc queries an IP geolocation service to provide the lattitude and the longitude required for the weather data.
 
 ### "init"
 Runs at the initialisation of the class object. This is where the class parameters such as service address and data variables are created. This class also automatically calls the "call()" to query the web service to get initial response.  
-#### Input
-_NONE_
-#### Output
-Used to create the class object.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ----- | ---- |
+| _None_ | (Used to create the class object.) |
 
 ### "call()"
 Queries the web service for IP info, and decodes the received JSON into the list "data".
-#### Input
-_NONE_
-#### Output
-_NONE_
- Used to update in-object parameters.
+
+| Input | Description |
+| ----------  | :----- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ----- | :----- |
+| _None_ | (Used to update in-object parameters.) |
 
 ### "getLoc()"
 Returns the lattitude and longitude.
-#### Input
-_NONE_
-#### Output
-A list with lattitude and longitude in float.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _float[]_ | The lattitude and longitude in float, in an array. |
 
 ### "getCity()"
 Returns the city for the location.
-#### Input
-_NONE_
- #### Output
-A string with the city name.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _string_ | The city name. |
 
 ### "getRegion()"
 Returns the region/state for the location.
-#### Input
-_NONE_
-#### Output
-A string with the region/state name.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _string_ | The region/state name. |
 
 ### "getZipcode()"
 Returns the zip code for the location.
-#### Input
-_NONE_
-#### Output
-A string with the zipcode.
+
+| Input | Description |
+| ----  | :---- |
+| _None_ | (No inputs) |
+
+| Output | Description |
+| ---- | :---- |
+| _string_ | The zipcode. |
 
 ## Getting Started
 
