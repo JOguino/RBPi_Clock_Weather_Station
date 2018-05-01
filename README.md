@@ -22,7 +22,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Breadboard
 * BMP085
 * HTU21DF
-Wifi module
+* Wifi module
 Real time clock module
 RGB LEDs
 Display
