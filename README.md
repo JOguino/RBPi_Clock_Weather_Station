@@ -6,7 +6,9 @@ Internal (Sensor)/ External (API) temperature, pressure, humidity, real clock ti
 
 The Bedside Weather Station project displays the weather information such as temperature, humidity, pressure and successive weather display of the day.
 
-This is a complete Raspberry Pi weather system with just the base Raspberry Pi hardware, and some assorted analog and digital sensors to make our measurements. No buying pre-made anemometers or rain gauges — we are making our own!
+This is a complete Raspberry Pi weather system with just the base Raspberry Pi hardware and the Raspberry Pi Sensehat.
+
+Arduino code is included that reads data from 
 
 Each of those sensors uses different type of python or even C code to get the readings. Both of them store the results in the database in pretty much the same way. Generally speaking, the code works as follows. In the first run, it creates a new table and with setting up a ?, this process is repeated every ? minutes. This way we get a nice overview of the temperatures during the day.
 
@@ -27,7 +29,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Real time clock module
 * Display
 
-### Hardware Used
+### Hardware Used for Sensehat version
   * Raspberry Pi 3 B+ (comes with the following)
       * Wifi module
         * NTP Protocol was used instead of Real Time Clock Module
@@ -36,15 +38,30 @@ These instructions will get you a copy of the project up and running on your loc
       * Humidity Sensor
       * Temperature Sensor
       * RGB LEDs
-  * Adafruit A800 screen (1280x800 screen)
-    
+  * Adafruit A800 screen (1280x800 HDMI screen)
 
-What things you need to install the software and how to install them
+ #### What things you need to install the software and how to install them
 
   * latest version of Rapsberry Pi OS
   * Python 3
   * Tkinter (usually comes with python3)
   
+
+### Hardware Used for Arduino version
+ * Raspberry Pi 3 B+ (comes with the following)
+     * Wifi module
+ * Arduino Uno
+ * Adafruit HTU21D-F (humidity and temperature sensor)
+ * Sparkfun MPL3115A2 (Altitude/Pressure Sensor)
+ * Tiny RTC I2C Module (real time clock module)
+ * Sense Hat (comes with the following)
+    * RGB LEDs
+ * Adafruit A800 screen (1280x800 HDMI screen)
+ 
+ 
+ 
+
+
 
 
 ```
