@@ -237,3 +237,7 @@ sudo apt-get install python3
 <p align="center">
   <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5917.jpg" width="400"/>
 </p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5922.jpg" width="400"/>
+</p>
