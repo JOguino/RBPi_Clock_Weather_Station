@@ -10,7 +10,9 @@ This is a complete Raspberry Pi weather system with just the base Raspberry Pi h
 
 Python code was implemented that read the sensor values. 
 Tkinter was used to create a window that would display the time.
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/20180501_102106.jpg" width="50"/>
+</p>
 
 The format is as followed:
 ```
@@ -90,6 +92,5 @@ sudo apt-get install python3
 
 ## Images
 <p align="center">
-  <img src="https://github.com/JOguino/RBPi_Clock_Weather_Station/blob/master/icons/01d.png?raw=true" width="350"/>
-  <img src="https://github.com/JOguino/RBPi_Clock_Weather_Station/blob/master/icons/01d.png?raw=true" width="350"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/20180501_102106.jpg" width="50"/>
 </p>
