@@ -17,6 +17,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
+Raspberry Pi 3 
+Breadboard wire bundle
+Breadboard
+TMP102
+BMP085
+HTU21DF
+Wifi module
+Real time clock mocule
+RGB LEDs
+Display
+
 What things you need to install the software and how to install them
 
 ```
