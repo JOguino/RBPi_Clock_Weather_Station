@@ -146,4 +146,4 @@ class Outside_Humidity(tk.Frame):
                                                font=("alfie",72))
 ##        after 1 hour, refresh
         self.after(3600000, self.update)
-        
+       
