@@ -7,6 +7,8 @@ Internal (Sensor)/ External (API) temperature, pressure, humidity, real clock ti
 The Bedside Weather Station project displays the weather information such as temperature, humidity, pressure and successive weather display of the day.
 
 This is a complete Raspberry Pi weather system with just the base Raspberry Pi hardware and the Raspberry Pi Sensehat.
+You can find the video of our project below:
+
 https://youtu.be/yVVe4LodSj8
 
 Python code was implemented that read the sensor values. 
