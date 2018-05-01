@@ -239,48 +239,48 @@ sudo apt-get install python3
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5922.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5922.JPG" width="400"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5937.jpg" width="400"/>
-</p>
-
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5945.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5937.JPG" width="400"/>
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5943.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5945.JPG" width="400"/>
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5944.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5943.JPG" width="400"/>
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5934.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5944.JPG" width="400"/>
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5939.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5934.JPG" width="400"/>
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5942.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5939.JPG" width="400"/>
 </p>
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5941.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5942.JPG" width="400"/>
+</p>
+
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5941.JPG" width="400"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5938.jpg" width="400"/>
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5938.JPG" width="400"/>
 </p>
