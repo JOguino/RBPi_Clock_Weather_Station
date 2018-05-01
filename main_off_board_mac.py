@@ -21,7 +21,6 @@ if __name__ == "__main__":
             updates the widget automatically when you create the widget.
 
         """
-
         # Create window and frame
         window = tkinter.Tk()
         window.configure(background = 'white')
@@ -43,7 +42,6 @@ if __name__ == "__main__":
         bottom_blank_label = tkinter.Label(clock_frame, text=" ").pack()
 
         
-
  #       tkinter.Label(clock_frame, text="Have a nice day.",fg='white',bg='#292b5d').pack()
         leftcol = 1/12.0
         midcol = 0.5
@@ -105,9 +103,5 @@ if __name__ == "__main__":
         weather_logo = tkinter.Frame(width=200, height=50, background="#292b5d")
         weather_logo.place(in_=mainframe, anchor="c", relx=midcol, rely=.1)
         weather_logo_label = tkinter.Label(weather_logo, background="#292b5d", image=render,font=("alfie",60)).pack()
-
-
-
-
 
         window.mainloop()
