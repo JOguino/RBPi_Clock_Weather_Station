@@ -1,8 +1,13 @@
 # RBPi_Clock_Weather_Station
 
-# Project Title
+# BEDSIDE WEATHER STATION
 
-One Paragraph of project description goes here
+Internal (Sensor)/External (API) temperature, pressure, humidity, real clock time.
+
+The Bedside Weather Station project displays the weather information such as temperature, humidity, pressure and successive weather display of the day.
+
+This is a complete Raspberry Pi weather system with just the base Raspberry Pi hardware, and some assorted analog and digital sensors to make our measurements. No buying pre-made anemometers or rain gauges — we are making our own!
+
 
 ## Getting Started
 
