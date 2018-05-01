@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 import tkinter as tk
 #from sense_hat import SenseHat
@@ -98,7 +97,6 @@ class Outside_Temperature(tk.Frame):
                                                font=("alfie",72))
         self.after(3600000, self.update)
         
-
 class Outside_Pressure(tk.Frame):
     weather = OWM.getWeatherData()
     x = str('%0.d' %weather['Pressure'])
