@@ -40,10 +40,11 @@ https://youtu.be/yVVe4LodSj8
   * Tkinter (usually comes with python3)
  
 # Getting Started
-Boot Raspbian Imaga (as of writing this, Raspbian Stretch April 18, 2018)
+Boot Raspbian Image (as of writing this, Raspbian Stretch April 18, 2018)
 
 Set up wifi.
 
+Run following terminal commands.
 ```
 How to run via terminal
 
