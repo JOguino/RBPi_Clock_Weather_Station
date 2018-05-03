@@ -80,7 +80,7 @@ Ambient light was implemented using the built in sensehat LEDS to give a RGB eff
 
 ## Time:
 The clock will grab the time from the system and update every second.  
-An NTP method has been written that can grab the time and date. It just has to be displayed.
+An NTP method has been written that can grab the time and date. 
 
 ## Sensor Data:  
 Sensor data is polled every second and updated.
@@ -95,9 +95,13 @@ OWMInterface gives details to how the data is grabbed and what functions are use
 
 ## What's Next? How to improve.
 ### External Sensors
+#### Temperature/Humidity/Pressure Sensor 
 Because the temperatures are so close to the processor, they heat up causing inaccurate results.
 Arduino code has been uploaded that uses exteral processor (an Arduino Uno in this case), to allow for the sesnsors to be further away from non-environmental affecting elements.  
 The sensor data will be sent from the Arduino to the Raspberry Pi
+#### Real time clock  
+Internet will not always be avaialbe, therefore having a Real Time Clock module will be nice to keep time incase the NTP protocol cant be implemented. 
+
 #### Hardware Used for Arduino version
  * Raspberry Pi 3 B+ (comes with the following)
      * Wifi module
