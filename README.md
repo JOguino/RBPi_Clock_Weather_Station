@@ -7,11 +7,58 @@ Internal (Sensor)/ External (API) temperature, pressure, humidity, real clock ti
 The Bedside Weather Station project displays the weather information such as temperature, humidity, pressure and successive weather display of the day.
 
 This is a complete Raspberry Pi weather system with just the base Raspberry Pi hardware and the Raspberry Pi Sensehat.
-You can find the video of our project below:
+You can find the video of the project below:
 
 https://youtu.be/yVVe4LodSj8
 
-Python code was implemented that read the sensor values. 
+### Prerequisites
+
+* Raspberry Pi 3 
+* Breadboard wire bundle
+* Breadboard
+* Pressure Sensor
+* Humidity Sensor
+* Temperature Sensor
+* RGB LEDs
+* Wifi module
+* Real time clock module
+* Display
+
+### Hardware Used for Sensehat version
+  * Raspberry Pi 3 B+ (comes with the following)
+      * Wifi module
+        * NTP Protocol was used instead of Real Time Clock Module
+  * Sense Hat (comes with the following)
+      * Pressure Sensor
+      * Humidity Sensor
+      * Temperature Sensor
+      * RGB LEDs
+  * Adafruit A800 screen (1280x800 HDMI screen)
+
+ #### Software Used
+ 
+  * latest version of Rapsberry Pi OS
+  * Python 3
+  * Tkinter (usually comes with python3)
+ 
+# Getting Started
+Boot Raspbian Imaga (as of writing this, Raspbian Stretch April 18, 2018)
+
+Set up wifi.
+
+```
+How to run via terminal
+
+### Installing
+sudo apt-get update
+sudo apt-get upgrade
+git clone https://github.com/JOguino/RBPi__Clock_Weather_Station
+
+python3 main.py
+```
+# How it was made
+
+## GUI
 Tkinter was used to create a window that would display the time.
 <p align="center">
   <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/20180501_102106.jpg" width="200"/>
@@ -27,14 +74,51 @@ Hours:Minutes:Seconds
 Inside Temp      Inside Pressure        Inside Humidity
 ```
 
-Time:
-The clock will grab the time from the system and update every second. An NTP method has been written that can grab the time and date. It just has to be displayed.
+Ambient light was implemented using the built in sensehat LEDS to give a RGB effect telling the user what the weather condition outside is.  
 
-Sensor Data:
-Sensor data is polled every second and updated depending on the readings.
-If the raspberry pi has been running a while, the temperature sensor on the Sense hat will run higher because of the ambient heat coming from the processor.
-Arduino code has been written and implemented that can read sensor data furhter away from the raspberry pi.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/JOguino/RBPi_Clock_Weather_Station/master/images/IMG_5919.jpg" width="400"/>
+</p>
+
+## Time:
+The clock will grab the time from the system and update every second.  
+An NTP method has been written that can grab the time and date. It just has to be displayed.
+
+## Sensor Data:  
+Sensor data is polled every second and updated.
+If the raspberry pi has been running a while, the temperature sensor on the Sense hat will run higher because of the ambient heat coming from the processor. Therefore a manual correction was added to the code to account for this. The correction can be found in  
+Frames.py -> Room_Temprature -> udate()  
+Arduino code has been written and implemented that can read sensor data furhter away from the raspberry pi.  
 Serial communication will be used to transmit the data.
+
+## Weather Data  
+Using OpenWeatherMap, data was grabbed posted in the GUI.  
+OWMInterface gives details to how the data is grabbed and what functions are used.
+
+## What's Next? How to improve.
+### External Sensors
+Because the temperatures are so close to the processor, they heat up causing inaccurate results.
+Arduino code has been uploaded that uses exteral processor (an Arduino Uno in this case), to allow for the sesnsors to be further away from non-environmental affecting elements.  
+The sensor data will be sent from the Arduino to the Raspberry Pi
+#### Hardware Used for Arduino version
+ * Raspberry Pi 3 B+ (comes with the following)
+     * Wifi module
+ * Arduino Uno
+ * Adafruit HTU21D-F (humidity and temperature sensor)
+ * Sparkfun MPL3115A2 (Altitude/Pressure Sensor)
+ * Tiny RTC I2C Module (real time clock module)
+ * Sense Hat (comes with the following)
+    * RGB LEDs
+ * Adafruit A800 screen (1280x800 HDMI screen)
+
+### Add Date  
+NTPTimeSync.py grabs the date. Modify the strings inside the Clock.py Class to allow for date to be displayed
+
+### Add Symbol for Weather Condition
+using PIL (Pillow) for python3 we are able to put images into the GUI, 
+main_off_board_mac.py (was used for prototyping with macs away from raspberry pi)
+implements this feature to add a symbol for weather condition
+
 
 ## OWMInterface Class
 OWMInterface is a class built to query the web API (OpenWeatherMap in this case) for the outside weather, and decode the response into information accessible by method calls. It requires some modification to run it on a presonalised system, since OpenWeatherMap requires users to get an APPID (available for free) to access their services. This personal APPID must be set inside the class "init" to be able to get correct responses to the web queries.
@@ -224,50 +308,7 @@ Returns the zip code for the location.
 | ---- | :---- |
 | _string_ | The zipcode. |
 
-## Getting Started
 
-### Prerequisites
-
-* Raspberry Pi 3 
-* Breadboard wire bundle
-* Breadboard
-* Pressure Sensor
-* Humidity Sensor
-* Temperature Sensor
-* RGB LEDs
-* Wifi module
-* Real time clock module
-* Display
-
-### Hardware Used for Sensehat version
-  * Raspberry Pi 3 B+ (comes with the following)
-      * Wifi module
-        * NTP Protocol was used instead of Real Time Clock Module
-  * Sense Hat (comes with the following)
-      * Pressure Sensor
-      * Humidity Sensor
-      * Temperature Sensor
-      * RGB LEDs
-  * Adafruit A800 screen (1280x800 HDMI screen)
-
- #### Software Used
- 
-  * latest version of Rapsberry Pi OS
-  * Python 3
-  * Tkinter (usually comes with python3)
-  
-
-### Hardware Used for Arduino version
- * Raspberry Pi 3 B+ (comes with the following)
-     * Wifi module
- * Arduino Uno
- * Adafruit HTU21D-F (humidity and temperature sensor)
- * Sparkfun MPL3115A2 (Altitude/Pressure Sensor)
- * Tiny RTC I2C Module (real time clock module)
- * Sense Hat (comes with the following)
-    * RGB LEDs
- * Adafruit A800 screen (1280x800 HDMI screen)
- 
 
 ```
 Give examples
