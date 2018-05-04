@@ -165,9 +165,22 @@ Returns the general weather classification ("Clear", "Cloudy", "Rain" etc.)
 ### "weatherDesc()"
 Returns the specific weather description (such as "Scattered Clouds")
 
-| Input | Description |
-| ----  | :---- |
-| _None_ | (No inputs) |
+        weather_stuff = [("clear sky", "01d.png"),
+                          ("few clouds", "02d.png"),
+                          ("scattered clouds", "03d.png"),
+                          ("broken clouds", "04d.png"),
+                          ("shower rain", "09d.png"),
+                          ("rain", "10d.png"),
+                          ("thunderstorm", "11d.png"),
+                          ("snow", "13d.png"),
+                          ("mist", "50d.png")]
+        
+        current_weather = 0 # TODO: This is where we choose the correct weather index from above ^
+        iconset = "icons"  # can do alternative_icons too
+        
+        weather = tkinter.Frame(width=200, height=50)
+        weather.place(in_=mainframe, anchor="w", relx=leftcol, rely=.1)
+        weather_label = tkinter.Label(weather , text= weather_stuff[current_weather][0].capitalize(), fg='white',bg='#292b5d',font=("alfie",60)).pack()
 
 | Output | Description |
 | ---- | :---- |
@@ -176,9 +189,29 @@ Returns the specific weather description (such as "Scattered Clouds")
 ### "weatherIcon()"
 Returns the weather icon code to load the specific icon for the weather condition (such as "01d")
 
-| Input | Description |
-| ----  | :---- |
-| _None_ | (No inputs) |
+weather_stuff = [("clear sky", "01d.png"),
+                          ("few clouds", "02d.png"),
+                          ("scattered clouds", "03d.png"),
+                          ("broken clouds", "04d.png"),
+                          ("shower rain", "09d.png"),
+                          ("rain", "10d.png"),
+                          ("thunderstorm", "11d.png"),
+                          ("snow", "13d.png"),
+                          ("mist", "50d.png")]
+        
+        current_weather = 0 # TODO: This is where we choose the correct weather index from above ^
+        iconset = "icons"  # can do alternative_icons too
+        
+        weather = tkinter.Frame(width=200, height=50)
+        weather.place(in_=mainframe, anchor="w", relx=leftcol, rely=.1)
+        weather_label = tkinter.Label(weather , text= weather_stuff[current_weather][0].capitalize(), fg='white',bg='#292b5d',font=("alfie",60)).pack()
+        
+        load = Image.open(os.path.join(iconset, weather_stuff[current_weather][1]))
+        render = ImageTk.PhotoImage(load)
+        
+        weather_logo = tkinter.Frame(width=200, height=50, background="#292b5d")
+        weather_logo.place(in_=mainframe, anchor="c", relx=midcol, rely=.1)
+        weather_logo_label = tkinter.Label(weather_logo, background="#292b5d", image=render,font=("alfie",60)).pack()
 
 | Output | Description |
 | ---- | :---- |
@@ -187,9 +220,11 @@ Returns the weather icon code to load the specific icon for the weather conditio
 ### "temperature()"
 Returns the temperature at the time of the query, in the units set in the object initialisaion.
 
-| Input | Description |
-| ----  | :---- |
-| _None_ | (No inputs) |
+        room_temperature = frames.Room_Temperature(window)
+        room_temperature.place(in_=mainframe, anchor="w", relx=leftcol, rely=.8)
+
+        outside_temperature = frames.Outside_Temperature(window)
+        outside_temperature.place(in_=mainframe, anchor="w", relx=leftcol, rely=.2)
 
 | Output | Description |
 | ---- | :---- |
@@ -198,9 +233,11 @@ Returns the temperature at the time of the query, in the units set in the object
 ### "pressure()"
 Returns the atmospheric pressure at the time of the query, in _hPa_.
 
-| Input | Description |
-| ----  | :---- |
-| _None_ | (No inputs) |
+        room_pressure = frames.Room_Pressure(window)
+        room_pressure.place(in_=mainframe, anchor="c", relx=midcol, rely=.8)
+
+        outside_pressure = frames.Outside_Pressure(window)
+        outside_pressure.place(in_=mainframe, anchor="c", relx=midcol, rely=.2)
 
 | Output | Description |
 | ---- | :---- |
@@ -211,6 +248,9 @@ Returns the relative humidity percentage at the time of the query.
 
         room_humidity = frames.Room_Humidity(window)
         room_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.8)
+        
+        outside_humidity = frames.Outside_Humidity(window)
+        outside_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.2)
 
 | Output | Description |
 | ---- | :---- |
@@ -226,6 +266,9 @@ _The averaging parameters and the cutoffs for these factors are tuned by trial a
         chance_rain.place(in_=mainframe, anchor="e", relx=rightcol, rely=.1)
         chance_rain_label = tkinter.Label(chance_rain , text="30%", fg='white',bg='#292b5d',font=("alfie",60)).pack()
 
+| Output | Description |
+| ---- | :---- |
+| _float_ | The percent change of rain. |
 
 ### "gerWeatherData()"
 Returns a list of weather parameters (weatherMain, weatherDesc weatherIcon, temperature, pressure, humidiry, chanceOfRain at the time of the query.
