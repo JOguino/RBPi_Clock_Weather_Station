@@ -1,4 +1,5 @@
 # RBPi_Clock_Weather_Station
+## BY Joshua Owens, Nazli Goller, Eren Yildirir
 
 # Bedside Weather Station
 
