@@ -226,6 +226,10 @@ _The averaging parameters and the cutoffs for these factors are tuned by trial a
 | Input | Description |
 | ----  | :---- |
 | _None_ | (No inputs) |
+##   percent chance of rain  
+        chance_rain = tkinter.Frame(width=200, height=50)
+        chance_rain.place(in_=mainframe, anchor="e", relx=rightcol, rely=.1)
+        chance_rain_label = tkinter.Label(chance_rain , text="30%", fg='white',bg='#292b5d',font=("alfie",60)).pack()
 
 | Output | Description |
 | ---- | :---- |
