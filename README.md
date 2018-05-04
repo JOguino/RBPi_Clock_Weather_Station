@@ -209,12 +209,12 @@ Returns the atmospheric pressure at the time of the query, in _hPa_.
 ### "Humidity()"
 Returns the relative humidity percentage at the time of the query.
 
- room_humidity = frames.Room_Humidity(window)
- room_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.8)
+        room_humidity = frames.Room_Humidity(window)
+        room_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.8)
 
 | Output | Description |
 | ---- | :---- |
-| _float_ | The temperature value. |
+| _float_ | The humidity percentage. |
 
 ### "chanceOfRain()"
 Uses the "cloudiness", relative humidity, and the difference between the outside temperature and the dew point to give a crude prediction on the chance of rain.
