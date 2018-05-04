@@ -209,9 +209,8 @@ Returns the atmospheric pressure at the time of the query, in _hPa_.
 ### "Humidity()"
 Returns the relative humidity percentage at the time of the query.
 
-| Input | Description |
-| ----  | :---- |
-| _None_ | (No inputs) |
+ room_humidity = frames.Room_Humidity(window)
+ room_humidity.place(in_=mainframe, anchor="e", relx=rightcol, rely=.8)
 
 | Output | Description |
 | ---- | :---- |
@@ -222,18 +221,11 @@ Uses the "cloudiness", relative humidity, and the difference between the outside
 To calculate the dew point, it uses Magnus' equation with relative humidity and the temperature.
 
 _The averaging parameters and the cutoffs for these factors are tuned by trial and error, and are open to change for improvement._
-
-| Input | Description |
-| ----  | :---- |
-| _None_ | (No inputs) |
-##   percent chance of rain  
+ 
         chance_rain = tkinter.Frame(width=200, height=50)
         chance_rain.place(in_=mainframe, anchor="e", relx=rightcol, rely=.1)
         chance_rain_label = tkinter.Label(chance_rain , text="30%", fg='white',bg='#292b5d',font=("alfie",60)).pack()
 
-| Output | Description |
-| ---- | :---- |
-| _float_ | The percent chance of rain. |
 
 ### "gerWeatherData()"
 Returns a list of weather parameters (weatherMain, weatherDesc weatherIcon, temperature, pressure, humidiry, chanceOfRain at the time of the query.
